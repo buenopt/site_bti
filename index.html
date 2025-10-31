@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preload recursos críticos -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"></noscript>
+    
+    <link rel="preload" href="https://kit.fontawesome.com/your-kit-id.js" as="script">
+    
+    <!-- DNS Prefetch para recursos externos -->
+    <link rel="dns-prefetch" href="//readdy.ai">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//wa.me">
+    
+    <!-- Preconnect para recursos críticos -->
+    <link rel="preconnect" href="https://readdy.ai">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- SEO Meta Tags -->
+    <title>BTI Tecnologia - Soluções em TI para Empresas | Desenvolvimento, Cloud e Segurança</title>
+    <meta name="description" content="BTI Tecnologia oferece soluções completas em TI há mais de 17 anos. Desenvolvimento de software, infraestrutura cloud, segurança da informação e suporte técnico especializado para empresas." />
+    <meta name="keywords" content="BTI Tecnologia, soluções TI, desenvolvimento software, cloud computing, segurança informação, suporte técnico" />
+    <meta name="author" content="BTI Tecnologia" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://btitecnologia.com.br" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://btitecnologia.com.br" />
+    <meta property="og:title" content="BTI Tecnologia - Soluções em TI para Empresas" />
+    <meta property="og:description" content="Soluções completas em TI há mais de 17 anos. Desenvolvimento, cloud, segurança e suporte técnico especializado." />
+    <meta property="og:image" content="https://btitecnologia.com.br/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://btitecnologia.com.br" />
+    <meta property="twitter:title" content="BTI Tecnologia - Soluções em TI para Empresas" />
+    <meta property="twitter:description" content="Soluções completas em TI há mais de 17 anos. Desenvolvimento, cloud, segurança e suporte técnico especializado." />
+    <meta property="twitter:image" content="https://btitecnologia.com.br/og-image.jpg" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BTI Tecnologia",
+      "url": "https://btitecnologia.com.br",
+      "logo": "https://btitecnologia.com.br/logo.png",
+      "description": "Soluções completas em tecnologia da informação para empresas",
+      "foundingDate": "2007",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-15-3199-4299",
+        "contactType": "customer service",
+        "availableLanguage": "Portuguese"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/bti-tecnologia",
+        "https://www.facebook.com/btitecnologia",
+        "https://www.instagram.com/btitecnologia"
+      ]
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T78HPSN7RV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T78HPSN7RV', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    </script>
+    
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="msapplication-TileColor" content="#2563eb" />
+    
+    <!-- Critical CSS inline seria adicionado aqui se necessário -->
+    <style>
+      /* Critical CSS para evitar FOUC */
+      body { 
+        margin: 0; 
+        font-family: system-ui, -apple-system, sans-serif; 
+        line-height: 1.6;
+        background-color: #ffffff;
+      }
+      .loading { 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        min-height: 100vh; 
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loading">
+        <div>Carregando...</div>
+      </div>
+    </div>
+    
+    <!-- Scripts carregados de forma otimizada -->
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous" defer></script>
+    
+    <!-- Readdy Agent Widget -->
+    <script 
+      src="https://readdy.ai/api/public/assistant/widget?projectId=placeholder"
+      mode="hybrid"
+      voice-show-transcript="true"
+      theme="light"
+      size="compact"
+      accent-color="#14B8A6"
+      button-base-color="#000000"
+      button-accent-color="#FFFFFF"
+      defer
+    ></script>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
