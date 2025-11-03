@@ -26,7 +26,7 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
-    
+
     try {
       // Criar mensagem formatada para WhatsApp
       const whatsappMessage = `*Nova mensagem do site BTI Tecnologia*
@@ -96,15 +96,15 @@ ${formData.message}`;
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Contato BTI Tecnologia - Fale Conosco | Sorocaba, SP"
-        description="Entre em contato com a BTI Tecnologia em Sorocaba. Telefone (15) 3199-4299, email contato@bueno.inf.br. Atendimento de segunda a sexta, 8h às 18h. Solicite seu orçamento de TI agora mesmo."
-        keywords="contato BTI Tecnologia, telefone TI Sorocaba, email BTI, orçamento TI, fale conosco, atendimento Sorocaba"
-        canonical={`${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}/contato`}
+        title="Contato – BTI Soluções em TI - Sorocaba"
+        description="Entre em contato com a BTI para tirar dúvidas ou solicitar um orçamento de TI. Em Sorocaba, a BTI atende empresas de todo o Brasil. Fale conosco por telefone, e-mail ou formulário de contato e leve sua empresa ao próximo nível em tecnologia."
+        keywords="BTI contato, telefone BTI, e-mail BTI, suporte de TI Sorocaba, consultoria de TI Sorocaba, empresa de TI Sorocaba, Sorocaba, Jundiaí, Campinas, São Paulo, atendimento Brasil, orçamento TI"
+        canonical="/contato"
         ogImage={`${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}/og-contact.jpg`}
         structuredData={structuredData}
       />
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-blue-50 to-white overflow-hidden">
         <div className="absolute inset-0 opacity-5">
@@ -120,7 +120,7 @@ ${formData.message}`;
               </div>
               <span className="text-sm font-medium text-blue-700">Fale Conosco</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Entre em <span className="text-blue-600">Contato</span>
             </h1>
@@ -179,27 +179,27 @@ ${formData.message}`;
                 <div className="mt-8">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Nos siga nas redes sociais</h3>
                   <div className="flex space-x-4">
-                    <a 
-                      href="https://www.linkedin.com/company/buenotibr" 
+                    <a
+                      href="https://www.linkedin.com/company/buenotibr"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       <i className="ri-linkedin-fill text-lg"></i>
                     </a>
-                    <a 
-                      href="https://www.facebook.com/buenotibr" 
+                    <a
+                      href="https://www.facebook.com/buenotibr"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       <i className="ri-facebook-fill text-lg"></i>
                     </a>
-                    <a 
-                      href="https://www.instagram.com/buenotibr" 
+                    <a
+                      href="https://www.instagram.com/buenotibr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-6 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+                      className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       <i className="ri-instagram-fill text-lg"></i>
                     </a>
@@ -213,7 +213,9 @@ ${formData.message}`;
               <h2 className="text-2xl font-bold text-gray-900 mb-8">Envie uma Mensagem</h2>
               <form onSubmit={handleSubmit} data-readdy-form id="contact-form" className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Nome Completo *</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Nome Completo *
+                  </label>
                   <input
                     type="text"
                     id="name"
@@ -227,7 +229,9 @@ ${formData.message}`;
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">E-mail *</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    E-mail *
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -241,7 +245,9 @@ ${formData.message}`;
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Telefone
+                  </label>
                   <input
                     type="tel"
                     id="phone"
@@ -254,7 +260,9 @@ ${formData.message}`;
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Mensagem *</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Mensagem *
+                  </label>
                   <textarea
                     id="message"
                     name="message"
@@ -305,15 +313,17 @@ ${formData.message}`;
           <div className="mt-20">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Nossa Localização</h2>
-              <p className="text-gray-600">Estamos localizados em Sorocaba, SP - Brasil para melhor atendê-lo</p>
+              <p className="text-gray-600">
+                Estamos localizados em Sorocaba, SP - Brasil para melhor atendê-lo
+              </p>
             </div>
-            
-            <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-xl" style={{height: '400px'}}>
+
+            <div className="bg-gray-200 rounded-2xl overflow-hidden shadow-xl" style={{ height: '400px' }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58864.84156107817!2d-47.49758087832031!3d-23.50177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c58a7a0d5b0b7b%3A0x4b0b0b0b0b0b0b0b!2sSorocaba%2C%20SP!5e0!3m2!1spt!2sbr!4v1234567890"
                 width="100%"
                 height="100%"
-                style={{border: 0}}
+                style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -323,7 +333,7 @@ ${formData.message}`;
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

@@ -142,10 +142,10 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Sobre a BTI Tecnologia - História e Valores | Sorocaba, SP"
-        description="Conheça a história da BTI Tecnologia, empresa de TI em Sorocaba desde 2008. Nossos valores, missão e visão para transformar empresas através da tecnologia. Mais de 17 anos de experiência e 350+ clientes atendidos."
-        keywords="sobre BTI, história empresa TI, valores BTI Tecnologia, missão visão, empresa Sorocaba, tecnologia informação"
-        canonical={`${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}/sobre`}
+        title="Sobre a BTI – Empresa de TI em Sorocaba e região"
+        description="A BTI é uma empresa de TI em Sorocaba que atende clientes em todo o Brasil. Oferece soluções completas em TI – desde desenvolvimento de software e infraestrutura em nuvem até segurança da informação, CFTV e consultoria – com foco em inovação, qualidade e suporte especializado."
+        keywords="empresa de TI Sorocaba, soluções em TI, inovação em TI, consultoria de TI, outsourcing de TI, tecnologia da informação, Sorocaba, Jundiaí, Campinas, São Paulo, TI Sorocaba"
+        canonical="/sobre"
         ogImage={`${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}/og-about.jpg`}
         structuredData={structuredData}
       />

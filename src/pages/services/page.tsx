@@ -213,10 +213,10 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="BTI Tecnologia | Soluções em TI para Empresas"
-        description="Conheça todos os serviços de TI da BTI Tecnologia em Sorocaba: desenvolvimento de software, infraestrutura cloud, segurança da informação, consultoria TI, suporte técnico e CFTV. Soluções completas para sua empresa."
-        keywords="serviços TI Sorocaba, desenvolvimento software personalizado, infraestrutura cloud, segurança informação, consultoria TI, suporte técnico, CFTV controle acesso"
-        canonical={`${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}/servicos`}
+        title="Serviços de TI – Desenvolvimento, Cloud, Segurança"
+        description="Oferecemos desenvolvimento de software sob medida, infraestrutura cloud, segurança da informação, CFTV e consultoria de TI. Atuamos em Sorocaba e atendemos empresas de todo o Brasil com soluções personalizadas que impulsionam o seu negócio."
+        keywords="desenvolvimento de software Sorocaba, infraestrutura de TI, nuvem, segurança da informação, consultoria de TI Sorocaba, CFTV, suporte técnico, soluções de TI para empresas, Sorocaba e região"
+        canonical="/servicos"
         ogImage={`${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}/og-services.jpg`}
         structuredData={structuredData}
       />
@@ -277,6 +277,143 @@ export default function ServicesPage() {
                 <p className="text-sm text-gray-600">{benefit.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Business Types Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
+              <div className="w-4 h-4 flex items-center justify-center mr-2">
+                <i className="ri-building-line text-blue-600"></i>
+              </div>
+              <span className="text-sm font-medium text-blue-700">Segmentos Atendidos</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Atendemos <span className="text-blue-600">Todos os Segmentos</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Nossa experiência abrange diversos tipos de negócios, oferecendo soluções personalizadas para cada setor
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: 'ri-store-2-line',
+                title: 'Varejo',
+                description: 'Lojas e comércios',
+                color: 'blue'
+              },
+              {
+                icon: 'ri-building-2-line',
+                title: 'Shoppings',
+                description: 'Centros comerciais',
+                color: 'indigo'
+              },
+              {
+                icon: 'ri-hotel-line',
+                title: 'Hotéis',
+                description: 'Hotelaria e turismo',
+                color: 'purple'
+              },
+              {
+                icon: 'ri-hospital-line',
+                title: 'Clínicas',
+                description: 'Saúde e medicina',
+                color: 'cyan'
+              },
+              {
+                icon: 'ri-briefcase-line',
+                title: 'Escritórios',
+                description: 'Serviços profissionais',
+                color: 'teal'
+              },
+              {
+                icon: 'ri-palette-line',
+                title: 'Agências',
+                description: 'Marketing e publicidade',
+                color: 'orange'
+              },
+              {
+                icon: 'ri-computer-line',
+                title: 'Empresas de TI',
+                description: 'Tecnologia e software',
+                color: 'green'
+              },
+              {
+                icon: 'ri-user-star-line',
+                title: 'Consultores',
+                description: 'Consultoria de negócios',
+                color: 'pink'
+              },
+              {
+                icon: 'ri-graduation-cap-line',
+                title: 'Educação',
+                description: 'Escolas e universidades',
+                color: 'red'
+              },
+              {
+                icon: 'ri-restaurant-line',
+                title: 'Restaurantes',
+                description: 'Alimentação e bebidas',
+                color: 'yellow'
+              },
+              {
+                icon: 'ri-car-line',
+                title: 'Automotivo',
+                description: 'Concessionárias e oficinas',
+                color: 'gray'
+              },
+              {
+                icon: 'ri-building-4-line',
+                title: 'Indústrias',
+                description: 'Setor industrial',
+                color: 'slate'
+              }
+            ].map((business, index) => (
+              <div 
+                key={index} 
+                className="group p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <i className={`${business.icon} text-2xl text-white`}></i>
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2">{business.title}</h3>
+                <p className="text-sm text-gray-600">{business.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-16">
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Não encontrou seu segmento?
+              </h3>
+              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                Trabalhamos com diversos outros tipos de negócios. Entre em contato conosco e descubra como podemos ajudar sua empresa.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                  onClick={() => sendWhatsApp('Olá! Minha empresa é do segmento [DESCREVA SEU SEGMENTO] e gostaria de saber como a BTI pode me ajudar.')}
+                  className="inline-flex items-center px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap cursor-pointer"
+                >
+                  <i className="ri-whatsapp-line mr-2"></i>
+                  Conversar no WhatsApp
+                </button>
+                <a 
+                  href="/contato" 
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
+                >
+                  <i className="ri-mail-line mr-2"></i>
+                  Enviar Email
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

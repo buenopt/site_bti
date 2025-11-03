@@ -1,4 +1,3 @@
-
 import { useState, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -10,6 +9,7 @@ const Header = memo(() => {
     { name: 'Home', href: '/' },
     { name: 'Sobre', href: '/sobre' },
     { name: 'Serviços', href: '/servicos' },
+    { name: 'Blog', href: 'https://buenotibr.blogspot.com/', external: true },
     { name: 'Contato', href: '/contato' }
   ];
 
@@ -41,17 +41,30 @@ const Header = memo(() => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8" role="navigation">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 will-change-transform ${
-                  isActive(item.href)
-                    ? 'text-blue-600 border-b-2 border-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
-                }`}
-              >
-                {item.name}
-              </Link>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 text-sm font-medium transition-colors duration-200 will-change-transform text-gray-700 hover:text-blue-600 cursor-pointer flex items-center"
+                >
+                  {item.name}
+                  <i className="ri-external-link-line ml-1 text-xs" aria-hidden="true"></i>
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 will-change-transform ${
+                    isActive(item.href)
+                      ? 'text-blue-600 border-b-2 border-blue-600'
+                      : 'text-gray-700 hover:text-blue-600'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -102,6 +115,15 @@ const Header = memo(() => {
               <Link to="/servicos" className="block py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">
                 Serviços
               </Link>
+              <a 
+                href="https://buenotibr.blogspot.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer flex items-center"
+              >
+                Blog
+                <i className="ri-external-link-line ml-1 text-xs" aria-hidden="true"></i>
+              </a>
               <Link to="/contato" className="block py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">
                 Contato
               </Link>

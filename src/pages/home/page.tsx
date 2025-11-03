@@ -1,20 +1,23 @@
 
+import { memo } from 'react';
+import SEOHead from '../../components/seo/SEOHead';
 import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
-import SEOHead from '../../components/seo/SEOHead';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import DifferentialsSection from './components/DifferentialsSection';
+import BlogSection from './components/BlogSection';
 import ContactSection from './components/ContactSection';
 
-export default function HomePage() {
+const Home = memo(() => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "BTI Tecnologia",
+    "name": "BTI Tecnologia da Informação",
     "url": `${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}`,
     "logo": `${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}/logo.png`,
-    "description": "A BTI Tecnologia oferece soluções completas em TI para empresas, incluindo consultoria especializada, suporte técnico, desenvolvimento de software, infraestrutura em nuvem, segurança da informação e sistemas de CFTV.",
+    "description": "A BTI oferece desenvolvimento de software, infraestrutura em nuvem, segurança da informação, CFTV e consultoria de TI em Sorocaba, atendendo empresas em todo o Brasil.",
+    "foundingDate": "2008",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Sorocaba",
@@ -23,60 +26,83 @@ export default function HomePage() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+55-15-31994299",
+      "telephone": "+55-15-3199-4299",
       "contactType": "customer service",
-      "availableLanguage": "Portuguese"
+      "availableLanguage": "Portuguese",
+      "email": "contato@bueno.inf.br"
     },
-    "openingHours": "Mo-Fr 08:00-18:00",
-    "sameAs": [
-      "https://www.linkedin.com/company/buenotibr",
-      "https://www.facebook.com/buenotibr",
-      "https://www.instagram.com/buenotibr"
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "São Paulo"
+      },
+      {
+        "@type": "State", 
+        "name": "Minas Gerais"
+      },
+      {
+        "@type": "State",
+        "name": "Paraná"
+      }
     ],
-    "areaServed": {
-      "@type": "State",
-      "name": "São Paulo"
-    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Serviços de TI",
+      "name": "Serviços de TI BTI Tecnologia",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
             "name": "Desenvolvimento de Software",
-            "description": "Criamos soluções personalizadas para automatizar processos"
+            "description": "Criamos soluções personalizadas para automatizar processos e otimizar a gestão do seu negócio"
           }
         },
         {
-          "@type": "Offer",
+          "@type": "Offer", 
           "itemOffered": {
             "@type": "Service",
             "name": "Infraestrutura e Cloud",
-            "description": "Modernize sua infraestrutura com soluções em nuvem"
+            "description": "Modernize sua infraestrutura com soluções em nuvem seguras, escaláveis e econômicas"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Segurança da Informação",
+            "description": "Proteja seus dados e sistemas com as melhores práticas de segurança digital"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Segurança da Informação",
-            "description": "Proteja seus dados e sistemas com as melhores práticas"
+            "name": "CFTV e Controle de Acesso", 
+            "description": "Sistemas completos de segurança eletrônica para proteger seu patrimônio"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Consultoria em TI",
+            "description": "Orientação estratégica para alinhar a tecnologia aos objetivos do seu negócio"
           }
         }
       ]
-    }
+    },
+    "sameAs": [
+      "https://buenotibr.blogspot.com/"
+    ]
   };
 
   return (
-    <div className="min-h-screen">
-      <SEOHead
-        title="BTI Tecnologia | Soluções em TI para Empresas"
-        description="A BTI Tecnologia oferece soluções completas em TI para empresas, incluindo consultoria especializada, suporte técnico, desenvolvimento de software, infraestrutura em nuvem, segurança da informação e sistemas de CFTV. Atuamos com inovação, confiabilidade e foco na performance do seu negócio. Conte com especialistas em tecnologia corporativa, automação, monitoramento e serviços gerenciados para impulsionar resultados."
-        keywords="BTI Tecnologia, soluções em TI, consultoria de TI, suporte técnico, desenvolvimento de software, infraestrutura em nuvem, segurança da informação, CFTV, serviços gerenciados, inovação em tecnologia"
-        canonical={`${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}/`}
-        ogImage={`${import.meta.env.VITE_SITE_URL || 'https://bueno.inf.br'}/og-image.jpg`}
+    <>
+      <SEOHead 
+        title="BTI – Soluções Completas em TI em Sorocaba"
+        description="A BTI oferece desenvolvimento de software, infraestrutura em nuvem, segurança da informação, CFTV e consultoria de TI em Sorocaba, atendendo empresas em todo o Brasil. Transforme seu negócio com tecnologia de ponta."
+        keywords="tecnologia da informação Sorocaba, empresa de TI Sorocaba, desenvolvimento de software, infraestrutura em nuvem, segurança da informação, CFTV Sorocaba, consultoria de TI, suporte de TI, Sorocaba TI"
+        canonical="/"
         structuredData={structuredData}
       />
       <Header />
@@ -84,9 +110,14 @@ export default function HomePage() {
         <HeroSection />
         <ServicesSection />
         <DifferentialsSection />
+        <BlogSection />
         <ContactSection />
       </main>
       <Footer />
-    </div>
+    </>
   );
-}
+});
+
+Home.displayName = 'Home';
+
+export default Home;
